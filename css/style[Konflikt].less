@@ -1,0 +1,300 @@
+//imports
+@import "mixins.less";
+
+// Basics
+@rootDir: "localhost";
+@imgDir: "@{rootDir}/img";
+@imgDirRel: "../img";
+
+// Text Settings
+@textcolor: #000000;
+
+@linkcolor: #ccccc;
+@linkhover: #fffff;
+
+@orange: #fc3b00;
+
+// Basic Color Settings
+@bgcolor: #c3c3c3;
+
+// Basic Layout
+@headerH: 200px;
+
+//nav Layout
+@navHeight: 50px;
+@navMargin: 10px;
+@navPadding: 5px;
+
+// Basic Settings
+body{
+	//background-image: url("@{imgDirRel}/tweed.png");
+	background-color: #464646;
+}
+
+// Header Settings
+#header{
+	//height: @headerH;
+	// border: 1px solid #000;
+	// border-bottom: 0;
+	background-color: #222;	
+	margin: 0;
+	padding: 0;
+}
+
+#slider{
+	position:relative;
+	width: 100%;
+	height: @headerH;
+	border: 1px solid #000;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+
+	list-style: none;
+
+	>li{
+		width: inherit;
+		height: inherit;
+	}
+	
+	// Bulletpoints
+	ul,
+	li{
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	// Bulletpoints
+	ul{
+		list-style-type: none;
+		position: absolute;
+		z-index: 3;
+		bottom: 10px;
+		left: 10px;
+		line-height: 0;
+	}
+	
+	//Bulletpoints
+	ul>li{
+		float:left;
+
+		a{
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			margin: 0 8px 0 0;
+			background: #fff;
+			opacity: 0.3;
+			-webkit-box-shadow: 0px 0px 2px 1px #000;
+			-moz-box-shadow: 0px 0px 2px 1px #000;
+			box-shadow: 0px 0px 2px 1px #000;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+
+			&.current,
+			&:hover{
+				background-color: @orange;
+				opacity: 0.8;
+			}
+		}
+	}
+	
+	// Inside ImageSlider
+	div{
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		width: inherit;
+		height: inherit;
+		
+		// ImageSlider Link anpassung
+		a{
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			color: #fff;
+			text-shadow: 1px 1px 4px #000;
+			opacity: 0.5;
+			text-align: right;
+			line-height: 1.2em;
+
+			&:hover{
+				color: @orange;
+				opacity: 0.8;
+			}
+			
+			// ImageSlider Schrift anpassung
+			em{
+				display: block;
+				letter-spacing: 2px;
+				font-size:40px;
+				font-style: normal;
+			}
+			
+			// Subtitle
+			span{
+				display: block;
+				margin: 15px 4px -10px 0;
+				letter-spacing: 1px;
+				font-size: 12px;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
+
+#slider img{
+	min-width: 100%;
+	//max-width: 100%;
+	//height: @headerH;
+}
+
+// Sidebar Settings
+#header-sidebar{
+	height: @headerH;
+	list-style: none;
+	padding: 0;
+	text-align: center;
+
+	img{
+		margin: 50px 0 0 0;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+// Navigation
+#navbar{
+	position: relative;
+	width: 100%;
+	min-height: 50px;
+	padding: 0 0 0 15px;
+	list-style: none;
+	border-radius: 0px;
+	// border: 1px solid #000;
+	// border-top-width: 0;
+	
+	background-color: #222;
+
+	@media (max-width: 764px) {
+		margin-left: 0px;
+	}
+
+	.current-menu-item,
+	.current_page_item{
+		color: @orange;
+	}
+
+	>li{
+		z-index: 1000;
+
+		>a{
+			color: #fff;
+
+			&:hover{
+				color: #fff;
+				background-color: @orange;
+			}
+		}
+
+		&:hover>ul{
+			display: block;
+
+			@media (max-width: 764px) {
+				display: none;
+			}
+		}
+
+		>ul{
+			display: none;
+			position: absolute;
+			padding: 0;
+			min-width: 100px;
+
+			list-style: none;
+
+			border: 1px solid #000;
+
+			#gradient.vertical(#222, #3c3c3c);
+
+			>li{
+				padding: @navPadding;
+				&:hover{
+					background-color: @orange;
+				}
+
+				>a{
+					padding: @navPadding 100% @navPadding 0;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+#navbar.fixed-nav{
+	top: 0px;
+	z-index: 999;
+
+	@media (min-width: 765px) {
+		position: fixed;
+		width: 720px;
+
+		background-image: url("@{imgDirRel}/signatur.png");
+		background-size: 150px auto;
+		background-repeat:no-repeat;
+		background-position: right;
+	}
+
+	@media (min-width: 992px) {
+		position: fixed;
+		width: 940px;
+	}
+
+	@media (min-width: 1200px) {
+		position: fixed;
+		width: 1140px;
+	}
+}
+
+#content-wrapper{
+	margin: @navMargin 0 0 0;
+	@media (min-width: 764px) {
+		&.fixed-nav{
+			margin-top: @navHeight + @navMargin;
+		}
+	}		
+}
+
+#content-sidebar{
+	list-style: none;
+	padding: 5px 15px;
+	margin: 0;
+	background-color: #222;
+
+	h3{
+		opacity: 0.8;
+		padding: 5px;
+		background-color: @orange;
+		margin: -5px -15px 5px -15px;
+		text-align: center;
+	}
+	
+	>li{
+		padding: 10px 0px;
+
+		&:first-child{
+			padding: 0px !important;
+		}
+	}
+}
+
+#content-main{
+	background-color: #222;
+	border: 1px solid #000;
+}
+
+

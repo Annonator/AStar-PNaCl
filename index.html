@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap 101 Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <div class="container">
+        
+
+        <div class="row">
+          <div class="col-sm-12">
+            <ul id="navbar" class="navbar nav navbar-nav fixed-nav">
+              <li><a href="#">AStar PNaCl Test</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div id="content-wrapper" class="fixed-nav">
+            <div class="col-md-12 col-sm-12" >
+              <!-- Content Spalte Links -->
+              <div id="content-main">
+
+                <div id="erg">
+                  <h2>Ergebnis:</h2>
+                  <p id="output"></p>
+                </div>
+
+                <h2>Nodes:</h2>
+                <div>
+                  Start und End Knoten:
+                  <form>
+                    <input id="startEnd" type="text" value="0, 4">
+                    <input id="setStartEnd" type="submit">
+                  </form>
+                </div>
+                <div class="clearfix">
+                  <ul id="nodes">
+                    <li>0, 0</li>
+                    <li>1, 2</li>
+                    <li>10, 5</li>
+                    <li>8, 15</li>
+                    <li>3, 4</li>
+                  </ul>
+                  <ul id="connections">
+                    <li>1, 2</li>
+                    <li>0, 2, 3</li>
+                    <li>0, 1, 4</li>
+                    <li>1, 4</li>
+                    <li>2, 3</li>
+                  </ul>
+                </div>
+
+
+                <button id="sendToNative">Send To Native</button>
+                <button id="resetNodes">rest Nodes</button>
+                <button id="resetConnections">reset Connections</button>
+
+                <div>
+                  <p>SetConnections</p>
+                  <form>
+                    <textarea id="textArea" rows="4" cols="50">
+                    </textarea>
+                    <input id="submitt" type="submit">
+                  </form>
+                </div>
+
+                <div>
+                  <p>Add Node</p>
+                  <form id="addNode">
+                    <input id="cord" type="text">
+                    <input id="conn" type="text">
+                    <input id="submitAdd" type="submit">
+                  </form>
+                </div>
+
+                <div id="listener">
+
+                  <embed id="star"
+                  width=0 height=0
+                  src="pnacl/Release/star.nmf"
+                  type="application/x-pnacl" />
+                </div>
+              </div>
+              <div style="clear: both"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+        <script>window.jQuery || document.write('<script src="js/jquery-2.0.3.min.js"><\/script>')</script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/imageslider-ck.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function()
+          {
+            $('#slider').imageSlider({animation: ['fade']});
+          });
+          
+        
+      
+        </script>
+      </body>
+      </html>

@@ -1,0 +1,209 @@
+body {
+  background-color: #464646;
+}
+#header {
+  border: 1px solid #000;
+  border-bottom: 0;
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+}
+#slider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #000;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+#slider > li {
+  width: inherit;
+  height: inherit;
+}
+#slider ul,
+#slider li {
+  margin: 0px;
+  padding: 0px;
+}
+#slider ul {
+  list-style-type: none;
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  left: 10px;
+  line-height: 0;
+}
+#slider ul > li {
+  float: left;
+}
+#slider ul > li a {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px 0 0;
+  background: #fff;
+  opacity: 0.3;
+  -webkit-box-shadow: 0px 0px 2px 1px #000;
+  -moz-box-shadow: 0px 0px 2px 1px #000;
+  box-shadow: 0px 0px 2px 1px #000;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#slider ul > li a.current,
+#slider ul > li a:hover {
+  background-color: #fc3b00;
+  opacity: 0.8;
+}
+#slider div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: inherit;
+  height: inherit;
+}
+#slider div a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  text-shadow: 1px 1px 4px #000;
+  opacity: 0.5;
+  text-align: right;
+  line-height: 1.2em;
+}
+#slider div a:hover {
+  color: #fc3b00;
+  opacity: 0.8;
+}
+#slider div a em {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 40px;
+  font-style: normal;
+}
+#slider div a span {
+  display: block;
+  margin: 15px 4px -10px 0;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: normal;
+}
+#slider img {
+  min-width: 100%;
+}
+#header-sidebar {
+  height: 200px;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+#header-sidebar img {
+  margin: 50px 0 0 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+#navbar {
+  position: relative;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 0 0 15px;
+  list-style: none;
+  border-radius: 0px;
+  border: 1px solid #000;
+  border-top-width: 0;
+  background-color: #222;
+}
+@media (max-width: 764px) {
+  #navbar {
+    margin-left: 0px;
+  }
+}
+#navbar .current-menu-item,
+#navbar .current_page_item {
+  color: #fc3b00;
+}
+#navbar > li {
+  z-index: 1000;
+}
+#navbar > li > a {
+  color: #fff;
+}
+#navbar > li > a:hover {
+  color: #fff;
+  background-color: #fc3b00;
+}
+#navbar > li:hover > ul {
+  display: block;
+}
+@media (max-width: 764px) {
+  #navbar > li:hover > ul {
+    display: none;
+  }
+}
+#navbar > li > ul {
+  display: none;
+  position: absolute;
+  padding: 0;
+  min-width: 100px;
+  list-style: none;
+  border: 1px solid #000;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#222222), to(#3c3c3c));
+  background-image: -webkit-linear-gradient(top, #222222 0%, #3c3c3c 100%);
+  background-image: -moz-linear-gradient(top, #222222 0%, #3c3c3c 100%);
+  background-image: linear-gradient(to bottom, #222222 0%, #3c3c3c 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff3c3c3c', GradientType=0);
+}
+#navbar > li > ul > li {
+  padding: 5px;
+}
+#navbar > li > ul > li:hover {
+  background-color: #fc3b00;
+}
+#navbar > li > ul > li > a {
+  padding: 5px 100% 5px 0;
+  color: #fff;
+}
+#navbar.fixed-nav {
+  top: 0px;
+  z-index: 999;
+}
+@media (min-width: 765px) {
+  #navbar.fixed-nav {
+    position: fixed;
+    width: 720px;
+    background-image: url("../img/signatur.png");
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
+@media (min-width: 992px) {
+  #navbar.fixed-nav {
+    position: fixed;
+    width: 940px;
+  }
+}
+@media (min-width: 1200px) {
+  #navbar.fixed-nav {
+    position: fixed;
+    width: 1140px;
+  }
+}
+#content-wrapper {
+  margin: 10px 0 0 0;
+}
+@media (min-width: 764px) {
+  #content-wrapper.fixed-nav {
+    margin-top: 60px;
+  }
+}
+#content-sidebar {
+  list-style: none;
+  background-color: #222;
+  margin: 0;
+}
